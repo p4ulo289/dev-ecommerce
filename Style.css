@@ -1,0 +1,82 @@
+body {
+    background-color: rgb(255, 254, 254);
+    align-items: center;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    margin: 0;
+}
+
+header {
+    background-color: black;
+    color: white;
+    padding: 15px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+}
+
+#products-container {
+    display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(220px, 1fr));
+
+  gap: 20px;
+
+  padding: 20px;
+}
+
+.card {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.card img {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+  border-radius: 5px
+}
+
+/* Estilo para o item do carrinho */
+.cart-item {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+/* Tamanho da imagem no carrinho */
+.cart-img {
+    width: 80px !important;       /* Define uma largura fixa de miniatura */
+    height: 80px !important;      /* Define uma altura fixa de miniatura */
+    object-fit: cover !important; /* Garante que a foto do produto não fique esticada */
+    border-radius: 8rem !important; /* Opcional: deixa os cantos levemente arredondados */
+}
+
+.cart-info h3 {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.btn-remove {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 5px;
+    font-size: 0.8rem;
+}
+
+.btn-remove:hover {
+    background-color: #cc0000;
+}
+
+.dev-cart {
+    background-color: black;
+}
