@@ -51,10 +51,10 @@ header {
 
 /* Tamanho da imagem no carrinho */
 .cart-img {
-    width: 80px !important;       /* Define uma largura fixa de miniatura */
-    height: 80px !important;      /* Define uma altura fixa de miniatura */
+    width: 250px !important;       
+    height: 250px !important;      
     object-fit: cover !important; /* Garante que a foto do produto não fique esticada */
-    border-radius: 8rem !important; /* Opcional: deixa os cantos levemente arredondados */
+    border-radius: 8px !important; 
 }
 
 .cart-info h3 {

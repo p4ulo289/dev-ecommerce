@@ -22,4 +22,6 @@ export const products = [
         price: 350,
         amount: 40,
         image: "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRI3HEZIL-jZi2Tir4AJxvgxPK7eS0q3ndTBfwZkUVQZWYPqOT--ZdN9GUs45Iklfmmn0v0Z2_dZF5aVxhArdkUaom_Qrev"    }
-]    
+] 
+
+    
