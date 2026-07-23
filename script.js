@@ -106,3 +106,32 @@ searchInput.addEventListener("input",() => {
 });
 
 //-------------------------------
+
+//Função para alterar quantidade 
+
+function changeQuantity(index, change) {
+    if (!cart[index].quantity) {
+        cart[index].quantity = 1;
+    }
+    // Altera a quantidade com base no botão clicado (+1 ou -1)
+    cart[index].quantity += change;
+    if (cart[index].quantity <= 0) {
+        cart.splice(index, 1);
+    }
+    localStorage.setItem("cart", JSON.stringify(cart));
+    location.reload(); 
+}
+
+window.changeQuantity = changeQuantity;
+
+
+//inicio da funcao do rendercart
+
+let total = 0;
+
+cart.forEach((item) => {
+    const qty = intem.quantity || 1;
+    total+=item.price*qty
+});
+
+//-----------------------------

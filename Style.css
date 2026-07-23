@@ -80,3 +80,33 @@ header {
 .dev-cart {
     background-color: black;
 }
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.quantity-controls button {
+    background-color: #eee;
+    border: 1px solid #ccc;
+    padding: 2px 8px;
+    cursor:pointer;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.quantity-controls button:houver {
+    background-color: #ddd;
+}
+
+.quantity-controls span {
+    font-weight: bold;
+    min-width: 20px;
+    text-align: center;
+}
+
+.title {
+    color: #eee;
+}

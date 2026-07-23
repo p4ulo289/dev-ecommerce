@@ -8,8 +8,8 @@ let total = 0;
 
 container.innerHTML = ""; // Limpa o container antes de renderizar
 
-cart.forEach(item => {
-    total += item.price;
+cart.forEach((item, index) => {
+    total += item.price * (item.quantity || 1);
 
     container.innerHTML += `
     <div class="cart-item">
@@ -17,6 +17,12 @@ cart.forEach(item => {
         <div class="cart-info">
             <h3>${item.name}</h3>
             <p>R$ ${item.price}</p>
+
+            <div class="quantity-controls"> 
+                <button onclick="changeQuantity(${index}, -1)">-</button>
+                <span>${item.quantity || 1}</span>
+                <button onclick="changeQuantity(${index}, 1)">+</button>
+            </div>
             <button onclick="removeItem(${item.id})" class="btn-remove">Excluir</button>
         </div>    
     </div>
@@ -44,6 +50,24 @@ function removeItem(id) {
     // 3. Recarrega a página ou chama a função de renderizar novamente
     location.reload(); 
 }
+
+//----------------------------
+
+//função para alterar a quantidade
+
+function changeQuantity(index, change) {
+    if (!cart[index].quantity) {
+        cart[index].quantity = 1;
+    }
+    cart[index].quantity += change;
+    if (cart[index].quantity <= 0) {
+        cart.splice(index, 1);
+    }
+    localStorage.setItem("cart", JSON.stringify(cart));
+    location.reload();
+}
+
+window.changeQuantity = changeQuantity;
 
 //----------------------------
 
