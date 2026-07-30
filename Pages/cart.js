@@ -3,6 +3,7 @@ import { products } from "../Products/Itens.js"; // Adicionado .js
 const cart = JSON.parse(localStorage.getItem("cart")) || [];
 const container = document.getElementById("cart-items");
 const totalElement = document.getElementById("total"); // Pegando o elemento do total
+const checkoutBtn = document.getElementById("checkout-btn");
 
 let total = 0;
 
@@ -32,6 +33,11 @@ cart.forEach((item, index) => {
 // Corrigido para garantir que o elemento existe antes de escrever
 if (totalElement) {
     totalElement.innerHTML = `Total R$ ${total}`;
+}
+
+// Desabilita o botão de pagamento se o carrinho estiver vazio
+if (checkoutBtn) {
+    checkoutBtn.disabled = cart.length === 0;
 }
 
 //função para excluir os itens

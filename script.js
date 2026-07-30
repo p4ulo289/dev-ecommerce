@@ -130,7 +130,7 @@ window.changeQuantity = changeQuantity;
 let total = 0;
 
 cart.forEach((item) => {
-    const qty = intem.quantity || 1;
+    const qty = item.quantity || 1;
     total+=item.price*qty
 });
 
